@@ -1,0 +1,24 @@
+<label>Enter Server Name</label>
+<br>
+<!--<input type="text" 
+class="form-control"
+(input)="onUpdateServerName($event)"
+/>-->
+<input type="text" 
+class="form-control"
+[(ngModel)]="serverName"
+/>
+
+<!--<p>{{serverName}}</p>-->
+
+<br>
+<button class="btn btn-primary"
+ [disabled]='!allowServer'
+ (click)='onClickButton()'>
+    Add a server
+</button>
+<br>
+<!-- if serverCreation is true then it will show the para otherwise it will not show the para-->
+<p *ngIf="serverCreation">server is created {{serverName}}</p> 
+<br>
+<p [ngStyle]="{backgroundColor:getColor()}">server id is {{serverID}} and server is {{ getserverStatus() }}</p>
